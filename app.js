@@ -90,6 +90,6 @@ function newQuestion(){
   $("practice-feedback").textContent="";$("practice-feedback").className="practice-feedback";$("next-question").hidden=true;
   $("practice-count").textContent=`Question ${questionNumber}`;
 }
-$("next-question").addEventListener("click",()=>{questionNumber++;newQuestion();
-showTopic(location.pathname.endsWith("adding-fractions.html") ? "fractions" : "ordering");});
+$("next-question").addEventListener("click",()=>{questionNumber++;newQuestion();});
 newQuestion();
+showTopic(location.pathname.endsWith("adding-fractions.html") ? "fractions" : "ordering");
