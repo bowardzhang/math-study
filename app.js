@@ -47,7 +47,7 @@ function updateFractions(){
   drawCircle("circle-a-scaled",Math.min(an,common),common); drawCircle("circle-b-scaled",Math.min(bn,common),common);
   $("lcm-note").textContent=`${window.mathStudyLanguage === "de" ? "kgV" : "LCM"}(${da}, ${db}) = ${common}`;
   $("equation").textContent=`${an}/${common} + ${bn}/${common} = ${fractionText(total,common)}`;
-  $("calculation-explainer").textContent=`Multiply the numerator and denominator of A by ${ma}, and those of B by ${mb}. Now both fractions have denominator ${common}, so add ${an} + ${bn} and keep the denominator. Simplify the result if possible.`;
+  $("calculation-explainer").textContent=window.mathStudyLanguage === "de" ? `Erweitere A mit ${ma} und B mit ${mb}. Addiere ${an} + ${bn} und behalte den gemeinsamen Nenner ${common}. Kürze das Ergebnis, wenn möglich.` : `Multiply A by ${ma} and B by ${mb}. Add the numerators ${an} + ${bn} and keep the common denominator ${common}. Simplify the result if possible.`;
   $("sum-result").textContent=fractionText(total,common);
 }
 ["num-a","den-a","num-b","den-b"].forEach(id=>$(id).addEventListener("input",updateFractions));
