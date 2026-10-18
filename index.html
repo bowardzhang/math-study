@@ -12,54 +12,61 @@
   <div class="app-shell">
     <aside class="sidebar" id="sidebar">
       <a class="brand" href="#" aria-label="Math Study home"><span class="brand-mark">∑</span><span><strong>Math Study</strong><small>Learn it step by step</small></span></a>
-      <div class="sidebar-label">LEARNING PATH</div>
+      <div class="sidebar-label" data-i18n="learningPath">LEARNING PATH</div>
       <nav id="topic-nav" aria-label="Math topics">
         <div class="nav-group">
-          <div class="nav-heading">Numbers</div>
-          <button class="topic-link active" data-topic="ordering"><span class="topic-icon">↕</span><span>Comparing decimals</span><span class="nav-arrow">›</span></button>
-          <button class="topic-link" data-topic="fractions"><span class="topic-icon">½</span><span>Adding fractions</span><span class="nav-arrow">›</span></button>
+          <div class="nav-heading" data-i18n="numbers">Numbers</div>
+          <a class="topic-link" href="comparing-decimals.html" data-topic="ordering"><span class="topic-icon">↕</span><span data-i18n="topicOrdering">Comparing numbers</span><span class="nav-arrow">›</span></a>
+          <a class="topic-link" href="adding-fractions.html" data-topic="fractions"><span class="topic-icon">½</span><span data-i18n="topicFractions">Adding fractions</span><span class="nav-arrow">›</span></a>
         </div>
         <div class="nav-group coming-soon">
-          <div class="nav-heading">More topics</div>
-          <div class="topic-placeholder"><span class="topic-icon">×</span>Multiplication & division</div>
-          <div class="topic-placeholder"><span class="topic-icon">%</span>Percentages</div>
-          <div class="topic-placeholder"><span class="topic-icon">📐</span>Geometry</div>
-          <div class="topic-placeholder"><span class="topic-icon">x</span>Equations</div>
-          <p class="coming-note">More lessons will be added over time.</p>
+          <div class="nav-heading" data-i18n="moreTopics">More topics</div>
+          <div class="topic-placeholder"><span class="topic-icon">×</span><span data-i18n="topicMultiply">Multiplication & division</span></div>
+          <div class="topic-placeholder"><span class="topic-icon">%</span><span data-i18n="topicPercentages">Percentages</span></div>
+          <div class="topic-placeholder"><span class="topic-icon">📐</span><span data-i18n="topicGeometry">Geometry</span></div>
+          <div class="topic-placeholder"><span class="topic-icon">x</span><span data-i18n="topicEquations">Equations</span></div>
+          <p class="coming-note" data-i18n="comingNote">More lessons will be added over time.</p>
         </div>
       </nav>
-      <div class="sidebar-footer"><span class="status-dot"></span> Made for curious learners</div>
+      <div class="sidebar-footer"><span class="status-dot"></span> <span data-i18n="sidebarFooter">Made for curious learners</span></div>
     </aside>
     <main class="main-area">
-      <header class="topbar"><button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">☰</button><div class="breadcrumb">Maths <span>/</span> <strong id="breadcrumb-topic">Comparing decimals</strong></div><div class="top-pill">ENGLISH <span>·</span> PRIMARY & SECONDARY</div></header>
+      <header class="topbar"><button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">☰</button><div class="breadcrumb"><span data-i18n="maths">Maths</span> <span>/</span> <strong id="breadcrumb-topic">Comparing numbers</strong></div><div class="top-actions"><label class="language-label" for="language-select" data-i18n="languageLabel">Language</label><select id="language-select" aria-label="Language"><option value="en">English</option><option value="de">Deutsch</option></select><div class="top-pill" data-i18n="audience">PRIMARY & SECONDARY</div></div></header>
       <section class="welcome" id="welcome">
         <div><div class="eyebrow"><span class="sparkle">✦</span> YOUR MATHS LEARNING SPACE</div><h1 id="page-title">Understand numbers.<br><span>Build confidence.</span></h1><p id="page-intro">Short explanations, clear visuals and hands-on practice to make important maths ideas click.</p></div>
         <div class="welcome-art" aria-hidden="true"><div class="art-circle circle-one">⅔</div><div class="art-circle circle-two">+</div><div class="art-circle circle-three">0.75</div><span class="art-star">✳</span></div>
       </section>
       <section id="lesson-ordering" class="lesson-panel">
-        <div class="lesson-heading"><div><div class="eyebrow">NUMBER SENSE · INTERACTIVE GAME</div><h2>Comparing decimals and fractions</h2><p>Practise ordering numbers written in different ways.</p></div><span class="lesson-badge">Practice</span></div>
-        <div class="concept-card"><div class="concept-symbol">1 <span>›</span> 0.8</div><div><h3>One value, different forms</h3><p>A decimal, a fraction and a measurement can describe the same amount. Convert them to a common unit or compare their values before deciding which is smallest.</p></div></div>
-        <div class="embedded-game"><div class="embed-title"><div><h3>Ordering Units Game</h3><p>Choose numbers from smallest to largest, then check your answer.</p></div><a href="https://bowardzhang.github.io/NumberOrdering/" target="_blank" rel="noopener">Open full game ↗</a></div><iframe title="Interactive Ordering Units Game" src="https://bowardzhang.github.io/NumberOrdering/" loading="lazy"></iframe></div>
-        <p class="source-note">This lesson uses the existing <a href="https://github.com/bowardzhang/NumberOrdering" target="_blank" rel="noopener">NumberOrdering project</a>.</p>
+        <div class="lesson-heading"><div><div class="eyebrow" data-i18n="orderingEyebrow">NUMBER SENSE · INTERACTIVE GAME</div><h2 data-i18n="orderingTitle">Compare the numbers</h2><p data-i18n="orderingSubtitle">Choose the six values from smallest to largest.</p></div><span class="lesson-badge" data-i18n="practiceBadge">Practice</span></div>
+        <div class="concept-card"><div class="concept-symbol">0.25 <span>=</span> 1/4</div><div><h3 data-i18n="sameValueTitle">Different forms, same value</h3><p data-i18n="sameValueText">Numbers can be written as decimals, fractions or metric measurements. Convert them to the same unit and compare their values.</p></div></div>
+        <div class="ordering-game">
+          <div class="game-instructions"><div><h3 data-i18n="orderInstructionTitle">Build the correct order</h3><p data-i18n="orderInstructionText">Tap the values from smallest to largest. Tap a selected value again to remove it.</p></div><div class="game-round" id="ordering-round">Round 1</div></div>
+          <div class="number-bank" id="number-bank" aria-label="Numbers to order"></div>
+          <div class="selected-heading"><strong data-i18n="yourOrder">Your order</strong><span data-i18n="smallestToLargest">Smallest → largest</span></div>
+          <div class="selected-order" id="selected-order"></div>
+          <div class="game-actions"><button id="check-order" class="primary-button" data-i18n="checkAnswer">Check answer</button><button id="new-order" class="secondary-button" data-i18n="newQuestion">↻ New question</button></div>
+          <div id="ordering-feedback" class="practice-feedback" role="status" aria-live="polite"></div>
+          <p class="game-tip" data-i18n="orderingTip">Tip: 1 litre = 1,000 millilitres. Compare the values, not how they look.</p>
+        </div>
       </section>
       <section id="lesson-fractions" class="lesson-panel" hidden>
-        <div class="lesson-heading"><div><div class="eyebrow">FRACTIONS · VISUAL EXPLANATION</div><h2>Adding fractions with different denominators</h2><p>Make the pieces the same size before you add them.</p></div><span class="lesson-badge">Learn & practise</span></div>
-        <div class="lesson-copy"><h3>The key idea</h3><p>The denominator tells you how many equal pieces make one whole. You can only add fractions directly when their pieces have the same size. Find the <strong>least common multiple (LCM)</strong> of the denominators, then multiply the numerator and denominator of each fraction by the same number.</p></div>
+        <div class="lesson-heading"><div><div class="eyebrow">FRACTIONS · VISUAL EXPLANATION</div><h2 data-i18n="fractionsTitle">Adding fractions with different denominators</h2><p data-i18n="fractionsSubtitle">Make the pieces the same size before you add them.</p></div><span class="lesson-badge">Learn & practise</span></div>
+        <div class="lesson-copy"><h3 data-i18n="keyIdea">The key idea</h3><p data-i18n="keyIdeaText">The denominator tells you how many equal pieces make one whole. Find the least common multiple (LCM), then make equivalent fractions with the same denominator.</p></div>
         <div class="fraction-controls">
-          <div class="fraction-input"><label for="num-a">Fraction A</label><div class="fraction-fields"><input id="num-a" type="number" min="1" max="12" value="1" aria-label="Fraction A numerator"><span class="fraction-line"></span><input id="den-a" type="number" min="2" max="12" value="3" aria-label="Fraction A denominator"></div></div>
+          <div class="fraction-input"><label for="num-a">Fraction A</label><div class="fraction-fields"><input id="num-a" type="number" min="1" max="9" value="1" aria-label="Fraction A numerator"><span class="fraction-line"></span><input id="den-a" type="number" min="2" max="10" value="3" aria-label="Fraction A denominator"></div></div>
           <div class="plus-sign">+</div>
-          <div class="fraction-input"><label for="num-b">Fraction B</label><div class="fraction-fields"><input id="num-b" type="number" min="1" max="12" value="1" aria-label="Fraction B numerator"><span class="fraction-line"></span><input id="den-b" type="number" min="2" max="12" value="4" aria-label="Fraction B denominator"></div></div>
+          <div class="fraction-input"><label for="num-b">Fraction B</label><div class="fraction-fields"><input id="num-b" type="number" min="1" max="9" value="1" aria-label="Fraction B numerator"><span class="fraction-line"></span><input id="den-b" type="number" min="2" max="10" value="4" aria-label="Fraction B denominator"></div></div>
           <button id="random-fractions" class="secondary-button">↻ Try another</button>
         </div>
-        <div id="fraction-error" class="inline-error" role="alert" hidden>Please use whole numbers, with denominators from 2 to 12 and numerators from 0 to 12.</div>
+        <div id="fraction-error" class="inline-error" role="alert" hidden>Use whole numbers, numerators from 1 to denominator − 1, and denominators from 2 to 10.</div>
         <div class="visual-grid">
-          <article class="visual-card"><div class="step-label">STEP 1</div><h3>See the original fractions</h3><p>Each circle is one whole, split into equal parts.</p><div class="circle-pair"><div class="circle-item"><div id="circle-a" class="fraction-circle" aria-label="Fraction A visual"></div><div id="label-a" class="circle-fraction">1/3</div><small>Fraction A</small></div><div class="circle-item"><div id="circle-b" class="fraction-circle"></div><div id="label-b" class="circle-fraction">1/4</div><small>Fraction B</small></div></div></article>
-          <article class="visual-card"><div class="step-label">STEP 2</div><h3>Make equal-sized pieces</h3><p>Convert both fractions to the same denominator (the LCM).</p><div class="circle-pair"><div class="circle-item"><div id="circle-a-scaled" class="fraction-circle"></div><div id="label-a-scaled" class="circle-fraction">4/12</div><small>A equivalent fraction</small></div><div class="circle-item"><div id="circle-b-scaled" class="fraction-circle"></div><div id="label-b-scaled" class="circle-fraction">3/12</div><small>B equivalent fraction</small></div></div><div class="lcm-note" id="lcm-note">LCM(3, 4) = 12</div></article>
+          <article class="visual-card"><div class="step-label" data-i18n="step1">STEP 1</div><h3 data-i18n="originalFractions">See the original fractions</h3><p data-i18n="originalFractionsText">Each circle is one whole, split into equal parts.</p><div class="circle-pair"><div class="circle-item"><div id="circle-a" class="fraction-circle" aria-label="Fraction A visual"></div><div id="label-a" class="circle-fraction">1/3</div><small data-i18n="fractionA">Fraction A</small></div><div class="circle-item"><div id="circle-b" class="fraction-circle"></div><div id="label-b" class="circle-fraction">1/4</div><small data-i18n="fractionB">Fraction B</small></div></div></article>
+          <article class="visual-card"><div class="step-label" data-i18n="step2">STEP 2</div><h3 data-i18n="equalPieces">Make equal-sized pieces</h3><p data-i18n="equalPiecesText">Convert both fractions to the same denominator (the LCM).</p><div class="circle-pair"><div class="circle-item"><div id="circle-a-scaled" class="fraction-circle"></div><div id="label-a-scaled" class="circle-fraction">4/12</div><small data-i18n="equivalentA">A equivalent fraction</small></div><div class="circle-item"><div id="circle-b-scaled" class="fraction-circle"></div><div id="label-b-scaled" class="circle-fraction">3/12</div><small data-i18n="equivalentB">B equivalent fraction</small></div></div><div class="lcm-note" id="lcm-note">LCM(3, 4) = 12</div></article>
         </div>
-        <div class="calculation-card"><div class="step-label">STEP 3 · ADD THE NUMERATORS</div><div id="equation" class="equation">4/12 + 3/12 = 7/12</div><p id="calculation-explainer">Multiply A by 4 and B by 3. Keep the common denominator and add the numerators.</p><div class="result-row"><span>YOUR SUM</span><strong id="sum-result">7/12</strong></div></div>
-        <section class="practice-card"><div class="practice-header"><div><div class="eyebrow">CHECK YOUR UNDERSTANDING</div><h3>Quick practice</h3><p>Calculate the sum, then choose the correct answer.</p></div><div class="practice-count" id="practice-count">Question 1</div></div><div id="practice-question" class="practice-question">1/2 + 1/3 = ?</div><div id="answer-options" class="answer-options"></div><div id="practice-feedback" class="practice-feedback" role="status" aria-live="polite"></div><button id="next-question" class="primary-button" hidden>Next question →</button></section>
+        <div class="calculation-card"><div class="step-label" data-i18n="step3">STEP 3 · ADD THE NUMERATORS</div><div id="equation" class="equation">4/12 + 3/12 = 7/12</div><p id="calculation-explainer">Multiply A by 4 and B by 3. Keep the common denominator and add the numerators.</p><div class="result-row"><span data-i18n="yourSum">YOUR SUM</span><strong id="sum-result">7/12</strong></div></div>
+        <section class="practice-card"><div class="practice-header"><div><div class="eyebrow" data-i18n="checkUnderstanding">CHECK YOUR UNDERSTANDING</div><h3 data-i18n="quickPractice">Quick practice</h3><p data-i18n="practicePrompt">Calculate the sum, then choose the correct answer.</p></div><div class="practice-count" id="practice-count">Question 1</div></div><div id="practice-question" class="practice-question">1/2 + 1/3 = ?</div><div id="answer-options" class="answer-options"></div><div id="practice-feedback" class="practice-feedback" role="status" aria-live="polite"></div><button id="next-question" class="primary-button" hidden data-i18n="nextQuestion">Next question →</button></section>
       </section>
-      <footer class="page-footer">Small steps make strong foundations. <span>Math Study · English edition</span></footer>
+      <footer class="page-footer"><div class="footer-message"><span data-i18n="footerMessage">Small steps make strong foundations.</span><span class="dedication">❤️ For Linya and Luca ❤️</span><small>March 2025</small></div><span id="footer-edition">Math Study · English edition</span></footer>
     </main>
   </div>
   <script src="app.js"></script>
