@@ -16,6 +16,7 @@ const en = {
 "checkUnderstanding":"CHECK YOUR UNDERSTANDING","quickPractice":"Quick practice","practicePrompt":"Calculate the sum, then choose the correct answer.","nextQuestion":"Next question →","footerMessage":"Small steps make strong foundations."
 };
 function apply(lang) {
+ window.mathStudyLanguage=lang;
  const dict=lang==="de"?de:en;
  document.documentElement.lang=lang;
  document.title=lang==="de"?"Math Study — Mathematik verstehen":"Math Study — Understand Maths";
