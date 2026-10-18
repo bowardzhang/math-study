@@ -1,7 +1,7 @@
 (() => {
 const $=id=>document.getElementById(id);
 const pool=[{v:.125,t:"1/8 L",f:1},{v:.25,t:"1/4 L",f:1},{v:.375,t:"3/8 L",f:1},{v:.5,t:"1/2 L",f:1},{v:.625,t:"5/8 L",f:1},{v:.75,t:"3/4 L",f:1},{v:.875,t:"7/8 L",f:1}];
-let items=[],chosen=[],round=1,checked=false,lang="en";
+let items=[],chosen=[],round=0,checked=false,lang="en";
 try{lang=localStorage.getItem("math-study-language")==="de"?"de":"en"}catch(e){}
 const shuffle=a=>a.sort(()=>Math.random()-.5);
 const text=(en,de)=>lang==="de"?de:en;
