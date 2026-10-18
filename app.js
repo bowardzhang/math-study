@@ -45,7 +45,7 @@ function updateFractions(){
   $("label-a-scaled").textContent=fractionText(an,common); $("label-b-scaled").textContent=fractionText(bn,common);
   drawCircle("circle-a",Math.min(na,da),da); drawCircle("circle-b",Math.min(nb,db),db);
   drawCircle("circle-a-scaled",Math.min(an,common),common); drawCircle("circle-b-scaled",Math.min(bn,common),common);
-  $("lcm-note").textContent=`LCM(${da}, ${db}) = ${common}`;
+  $("lcm-note").textContent=`${window.mathStudyLanguage === "de" ? "kgV" : "LCM"}(${da}, ${db}) = ${common}`;
   $("equation").textContent=`${an}/${common} + ${bn}/${common} = ${fractionText(total,common)}`;
   $("calculation-explainer").textContent=`Multiply the numerator and denominator of A by ${ma}, and those of B by ${mb}. Now both fractions have denominator ${common}, so add ${an} + ${bn} and keep the denominator. Simplify the result if possible.`;
   $("sum-result").textContent=fractionText(total,common);
@@ -82,7 +82,7 @@ function newQuestion(){
       if(questionLocked)return;questionLocked=true;
       [...$("answer-options").children].forEach(b=>{b.disabled=true;if(b.textContent===currentAnswer)b.classList.add("correct");});
       if(answer===currentAnswer){$("practice-feedback").textContent="Correct! Great work — you found a common denominator."; $("practice-feedback").className="practice-feedback good";}
-      else{$("practice-feedback").textContent=`Not quite. The correct answer is ${currentAnswer}. Find the LCM, convert both fractions, then add the numerators.`; $("practice-feedback").className="practice-feedback bad";button.classList.add("incorrect");}
+      else{$("practice-feedback").textContent=window.mathStudyLanguage === "de" ? `Noch nicht ganz. Die richtige Antwort ist ${currentAnswer}. Finde das kgV, erweitere beide Brüche und addiere die Zähler.` : `Not quite. The correct answer is ${currentAnswer}. Find the LCM, convert both fractions, then add the numerators.`; $("practice-feedback").className="practice-feedback bad";button.classList.add("incorrect");}
       $("next-question").hidden=false;
     });
     $("answer-options").appendChild(button);
