@@ -1,5 +1,6 @@
 (() => {
 const de = {
+"languageLabel":"Sprache",
 "learningPath":"LERNPFAD","numbers":"Zahlen","moreTopics":"Weitere Themen","topicOrdering":"Zahlen vergleichen","topicFractions":"Brüche addieren","topicMultiply":"Multiplikation & Division","topicPercentages":"Prozentrechnung","topicGeometry":"Geometrie","topicEquations":"Gleichungen","comingNote":"Weitere Lektionen folgen nach und nach.","sidebarFooter":"Für neugierige Lernende","maths":"Mathematik","audience":"GRUND- & WEITERFÜHRENDE SCHULE",
 "orderingEyebrow":"ZAHLENVERSTÄNDNIS · INTERAKTIVES SPIEL","orderingTitle":"Vergleiche die Zahlen","orderingSubtitle":"Ordne die sechs Werte vom kleinsten zum größten.","practiceBadge":"Übung","sameValueTitle":"Andere Schreibweise, gleicher Wert","sameValueText":"Zahlen können als Dezimalzahlen, Brüche oder metrische Maße angegeben werden. Wandle sie in dieselbe Einheit um und vergleiche ihre Werte.",
 "orderInstructionTitle":"Bringe die Zahlen in die richtige Reihenfolge","orderInstructionText":"Tippe die Werte vom kleinsten zum größten an. Tippe einen ausgewählten Wert erneut an, um ihn zu entfernen.","yourOrder":"Deine Reihenfolge","smallestToLargest":"Kleinster → größter","checkAnswer":"Antwort prüfen","newQuestion":"↻ Neue Aufgabe","orderingTip":"Tipp: 1 Liter = 1.000 Milliliter. Vergleiche die Werte, nicht ihre Schreibweise.",
@@ -8,6 +9,7 @@ const de = {
 "checkUnderstanding":"PRÜFE DEIN VERSTÄNDNIS","quickPractice":"Kurze Übung","practicePrompt":"Berechne die Summe und wähle dann die richtige Antwort.","nextQuestion":"Nächste Aufgabe →","footerMessage":"Kleine Schritte schaffen ein starkes Fundament."
 };
 const en = {
+"languageLabel":"Language",
 "learningPath":"LEARNING PATH","numbers":"Numbers","moreTopics":"More topics","topicOrdering":"Comparing numbers","topicFractions":"Adding fractions","topicMultiply":"Multiplication & division","topicPercentages":"Percentages","topicGeometry":"Geometry","topicEquations":"Equations","comingNote":"More lessons will be added over time.","sidebarFooter":"Made for curious learners","maths":"Maths","audience":"PRIMARY & SECONDARY",
 "orderingEyebrow":"NUMBER SENSE · INTERACTIVE GAME","orderingTitle":"Compare the numbers","orderingSubtitle":"Choose the six values from smallest to largest.","practiceBadge":"Practice","sameValueTitle":"Different forms, same value","sameValueText":"Numbers can be written as decimals, fractions or metric measurements. Convert them to the same unit and compare their values.",
 "orderInstructionTitle":"Build the correct order","orderInstructionText":"Tap the values from smallest to largest. Tap a selected value again to remove it.","yourOrder":"Your order","smallestToLargest":"Smallest → largest","checkAnswer":"Check answer","newQuestion":"↻ New question","orderingTip":"Tip: 1 litre = 1,000 millilitres. Compare the values, not how they look.",
@@ -29,6 +31,7 @@ function apply(lang) {
  if(title)title.innerHTML=topic==="fractions"?(lang==="de"?"Brüche verstehen<br><span>und addieren.</span>":"Make fractions make<br><span>sense.</span>"):(lang==="de"?"Zahlen verstehen.<br><span>Sicherer werden.</span>":"Understand numbers.<br><span>Build confidence.</span>");
  if(intro)intro.textContent=topic==="fractions"?(lang==="de"?"Verstehe gemeinsame Nenner und übe anschließend selbst das Addieren von Brüchen.":"See why common denominators work, then practise adding fractions yourself."):(lang==="de"?"Kurze Erklärungen, klare Bilder und interaktive Übungen machen wichtige Mathe-Ideen verständlich.":"Short explanations, clear visuals and hands-on practice to make important maths ideas click.");
  const footer=document.getElementById("footer-edition");if(footer)footer.textContent=lang==="de"?"Math Study · deutsche Ausgabe":"Math Study · English edition";
+ const count=document.getElementById("practice-count");if(count)count.textContent=(lang==="de"?"Aufgabe ":"Question ")+(count.textContent.match(/\d+/)||["1"])[0];
  const lcm=document.getElementById("lcm-note");if(lcm)lcm.textContent=lcm.textContent.replace(/^LCM/,"kgV");
  if(typeof updateFractions==="function")updateFractions();
 }
