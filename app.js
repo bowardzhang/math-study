@@ -37,7 +37,7 @@ function drawCircle(id,n,d) {
 }
 function updateFractions(){
   const na=Number($("num-a").value), da=Number($("den-a").value), nb=Number($("num-b").value), db=Number($("den-b").value);
-  const valid=[na,da,nb,db].every(Number.isInteger)&&na>=0&&na<da&&nb>=0&&nb<db&&da>=2&&da<=12&&db>=2&&db<=12;
+  const valid=[na,da,nb,db].every(Number.isInteger)&&na>=1&&na<da&&nb>=1&&nb<db&&da>=2&&da<=10&&db>=2&&db<=10;
   $("fraction-error").hidden=valid;
   if(!valid)return;
   const common=lcm(da,db), ma=common/da, mb=common/db, an=na*ma, bn=nb*mb, total=an+bn;
@@ -45,16 +45,16 @@ function updateFractions(){
   $("label-a-scaled").textContent=fractionText(an,common); $("label-b-scaled").textContent=fractionText(bn,common);
   drawCircle("circle-a",Math.min(na,da),da); drawCircle("circle-b",Math.min(nb,db),db);
   drawCircle("circle-a-scaled",Math.min(an,common),common); drawCircle("circle-b-scaled",Math.min(bn,common),common);
-  $("lcm-note").textContent=`LCM(${da}, ${db}) = ${common} · A × ${ma} · B × ${mb}`;
+  $("lcm-note").textContent=`LCM(${da}, ${db}) = ${common}`;
   $("equation").textContent=`${an}/${common} + ${bn}/${common} = ${fractionText(total,common)}`;
   $("calculation-explainer").textContent=`Multiply the numerator and denominator of A by ${ma}, and those of B by ${mb}. Now both fractions have denominator ${common}, so add ${an} + ${bn} and keep the denominator. Simplify the result if possible.`;
   $("sum-result").textContent=fractionText(total,common);
 }
 ["num-a","den-a","num-b","den-b"].forEach(id=>$(id).addEventListener("input",updateFractions));
 $("random-fractions").addEventListener("click",()=>{
-  const d1=2+Math.floor(Math.random()*7),d2=2+Math.floor(Math.random()*7);
+  const d1=2+Math.floor(Math.random()*9),d2=2+Math.floor(Math.random()*9);
   $("den-a").value=d1;$("den-b").value=d2;
-  $("num-a").value=Math.floor(Math.random()*d1);$("num-b").value=1+Math.floor(Math.random()*(d2-1));
+  $("num-a").value=1+Math.floor(Math.random()*(d1-1));$("num-b").value=1+Math.floor(Math.random()*(d2-1));
   updateFractions();
 });
 updateFractions();
