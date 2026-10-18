@@ -37,7 +37,7 @@ function drawCircle(id,n,d) {
 }
 function updateFractions(){
   const na=Number($("num-a").value), da=Number($("den-a").value), nb=Number($("num-b").value), db=Number($("den-b").value);
-  const valid=[na,da,nb,db].every(Number.isInteger)&&na>=0&&na<=12&&nb>=0&&nb<=12&&da>=2&&da<=12&&db>=2&&db<=12;
+  const valid=[na,da,nb,db].every(Number.isInteger)&&na>=0&&na<da&&nb>=0&&nb<db&&da>=2&&da<=12&&db>=2&&db<=12;
   $("fraction-error").hidden=valid;
   if(!valid)return;
   const common=lcm(da,db), ma=common/da, mb=common/db, an=na*ma, bn=nb*mb, total=an+bn;
