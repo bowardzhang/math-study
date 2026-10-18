@@ -42,7 +42,7 @@ function updateFractions(){
   if(!valid)return;
   const common=lcm(da,db), ma=common/da, mb=common/db, an=na*ma, bn=nb*mb, total=an+bn;
   $("label-a").textContent=fractionText(na,da); $("label-b").textContent=fractionText(nb,db);
-  $("label-a-scaled").textContent=fractionText(an,common); $("label-b-scaled").textContent=fractionText(bn,common);
+  $("label-a-scaled").textContent=`${fractionText(na,da)} = ${fractionText(an,common)}`; $("label-b-scaled").textContent=`${fractionText(nb,db)} = ${fractionText(bn,common)}`;
   drawCircle("circle-a",Math.min(na,da),da); drawCircle("circle-b",Math.min(nb,db),db);
   drawCircle("circle-a-scaled",Math.min(an,common),common); drawCircle("circle-b-scaled",Math.min(bn,common),common);
   $("lcm-note").textContent=`${window.mathStudyLanguage === "de" ? "kgV" : "LCM"}(${da}, ${db}) = ${common}`;
