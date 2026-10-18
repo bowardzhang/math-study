@@ -20,7 +20,7 @@ const simplify = (n,d) => { const g=gcd(n,d)||1; return [n/g,d/g]; };
 const fractionText = (n,d) => { const [a,b]=simplify(n,d); return b===1 ? String(a) : a+"/"+b; };
 function drawCircle(id,n,d) {
   const el=$(id); const size=160, center=80, radius=76;
-  if(d<1 || d>60){el.innerHTML="";return;}
+  if(d<1 || d>100){el.innerHTML="";return;}
   const colors=["#7668e8","#33b7a4"];
   let paths="";
   for(let i=0;i<d;i++){
