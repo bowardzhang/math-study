@@ -8,7 +8,7 @@ const text=(en,de)=>lang==="de"?de:en;
 function display(x){if(x.kind==="fraction")return x.label.replace("L",lang==="de"?"l":"L");if(x.kind==="ml")return Math.round(x.v*1000)+" "+(lang==="de"?"ml":"ml");return x.v.toFixed(3).replace(".",lang==="de"?",":".")+" "+(lang==="de"?"l":"L")}
 function make(){
  const a=shuffle(pool.slice()).slice(0,3).map(x=>({v:x.v,label:x.t,kind:"fraction"}));
- while(a.length<6){const v=Math.floor(Math.random()*1000)/1000;if(!a.some(x=>x.v===v))a.push({v,label:v.toFixed(3)+" L",kind:"litre"})}
+ while(a.filter(x=>x.kind==="ml").length<2){const v=Math.floor(Math.random()*1000)/1000;if(!a.some(x=>x.v===v))a.push({v,label:Math.round(v*1000)+" ml",kind:"ml"})} while(a.length<6){const v=Math.floor(Math.random()*1000)/1000;if(!a.some(x=>x.v===v))a.push({v,label:v.toFixed(3)+" L",kind:"litre"})}
  items=shuffle(a).map((x,i)=>({...x,id:i}));chosen=[];checked=false;round++;
  $("ordering-round").textContent=text("Round ","Runde ")+round;
  $("ordering-feedback").textContent="";$("ordering-feedback").className="practice-feedback";delete $("ordering-feedback").dataset.state;
