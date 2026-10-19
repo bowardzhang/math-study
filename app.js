@@ -81,7 +81,7 @@ function newQuestion(){
     button.addEventListener("click",()=>{
       if(questionLocked)return;questionLocked=true;
       [...$("answer-options").children].forEach(b=>{b.disabled=true;if(b.textContent===currentAnswer)b.classList.add("correct");});
-      if(answer===currentAnswer){$("practice-feedback").textContent="Correct! Great work — you found a common denominator."; $("practice-feedback").className="practice-feedback good";}
+      if(answer===currentAnswer){$("practice-feedback").textContent=window.mathStudyLanguage === "de" ? "Richtig! Sehr gut — du hast einen gemeinsamen Nenner gefunden." : "Correct! Great work — you found a common denominator."; $("practice-feedback").className="practice-feedback good";}
       else{$("practice-feedback").textContent=window.mathStudyLanguage === "de" ? `Noch nicht ganz. Die richtige Antwort ist ${currentAnswer}. Finde das kgV, erweitere beide Brüche und addiere die Zähler.` : `Not quite. The correct answer is ${currentAnswer}. Find the LCM, convert both fractions, then add the numerators.`; $("practice-feedback").className="practice-feedback bad";button.classList.add("incorrect");}
       $("next-question").hidden=false;
     });
