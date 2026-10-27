@@ -62,4 +62,21 @@ function initNegative(){
  $("negative-next").addEventListener("click",next);window.addEventListener("math-study-language-changed",next);next();
 }
 document.addEventListener("DOMContentLoaded",()=>{initSolids();initNegative();});
+
+function initLearningAnimations(){
+ const fold=document.getElementById("fold-cube"),net=document.getElementById("cube-net"),cube=document.querySelector(".cube-diagram");
+ if(fold&&net&&cube)fold.addEventListener("click",()=>{
+  net.classList.remove("folding");cube.classList.remove("spinning");void net.offsetWidth;
+  net.classList.add("folding");cube.classList.add("spinning");
+  fold.disabled=true;
+  window.setTimeout(()=>{net.classList.remove("folding");cube.classList.remove("spinning");fold.disabled=false;},1350);
+ });
+ const animate=document.getElementById("animate-fractions"),panel=document.querySelector(".strip-panel");
+ if(animate&&panel)animate.addEventListener("click",()=>{
+  panel.classList.remove("animating");void panel.offsetWidth;panel.classList.add("animating");animate.disabled=true;
+  window.setTimeout(()=>{panel.classList.remove("animating");animate.disabled=false;},1600);
+ });
+}
+document.addEventListener("DOMContentLoaded",initLearningAnimations);
+
 })();
