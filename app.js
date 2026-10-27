@@ -2,13 +2,11 @@ const $ = (id) => document.getElementById(id);
 const navButtons = [...document.querySelectorAll(".topic-link")];
 function showTopic(topic) {
   navButtons.forEach(button => button.classList.toggle("active", button.dataset.topic === topic));
-  $("lesson-ordering").hidden = topic !== "ordering";
-  $("lesson-fractions").hidden = topic !== "fractions";
-  const title = topic === "fractions" ? "Adding fractions" : "Comparing decimals";
-  $("breadcrumb-topic").textContent = title;
-  $("page-title").innerHTML = topic === "fractions" ? 'Make fractions make<br><span>sense.</span>' : 'Understand numbers.<br><span>Build confidence.</span>';
-  $("page-intro").textContent = topic === "fractions" ? "See why common denominators work, then practise adding fractions yourself." : "Short explanations, clear visuals and hands-on practice to make important maths ideas click.";
-  $("welcome").style.background = topic === "fractions" ? "linear-gradient(115deg,#eff0ff 0%,#f7f4ff 57%,#e9f8f3 100%)" : "";
+  const sections = {ordering:"lesson-ordering", fractions:"lesson-fractions", solids:"lesson-solids", negative:"lesson-negative"};
+  Object.entries(sections).forEach(([key,id])=>{const el=$(id);if(el)el.hidden=key!==topic;});
+  const titles={ordering:"Comparing numbers",fractions:"Fractions & addition",solids:"Solids & nets",negative:"Negative numbers"};
+  $("breadcrumb-topic").textContent=titles[topic]||titles.ordering;
+  $("welcome").style.background = topic === "fractions" ? "linear-gradient(115deg,#eff0ff 0%,#f7f4ff 57%,#e9f8f3 100%)" : topic === "solids" ? "linear-gradient(115deg,#e8f7f3 0%,#f6f8ff 60%,#fff0e9 100%)" : topic === "negative" ? "linear-gradient(115deg,#e8f1ff 0%,#f8f7ff 60%,#e9f8f3 100%)" : "";
   $("sidebar").classList.remove("open");
 }
 navButtons.forEach(button => button.addEventListener("click", () => showTopic(button.dataset.topic)));
@@ -35,6 +33,10 @@ function drawCircle(id,n,d) {
   }
   el.innerHTML=`<svg viewBox="0 0 160 160" role="img" aria-label="${n} of ${d} equal parts shaded">${paths}</svg>`;
 }
+function drawStrip(id,n,d){
+  const el=$(id); if(!el)return; el.innerHTML="";
+  for(let i=0;i<d;i++){const part=document.createElement("span");part.className="strip-part"+(i<n?" shaded":"");part.setAttribute("aria-hidden","true");el.appendChild(part);}
+}
 function updateFractions(){
   const na=Number($("num-a").value), da=Number($("den-a").value), nb=Number($("num-b").value), db=Number($("den-b").value);
   const valid=[na,da,nb,db].every(Number.isInteger)&&na>=1&&na<da&&nb>=1&&nb<db&&da>=2&&da<=10&&db>=2&&db<=10;
@@ -45,6 +47,8 @@ function updateFractions(){
   $("label-a-scaled").textContent=`${fractionText(na,da)} = ${an}/${common}`; $("label-b-scaled").textContent=`${fractionText(nb,db)} = ${bn}/${common}`;
   drawCircle("circle-a",Math.min(na,da),da); drawCircle("circle-b",Math.min(nb,db),db);
   drawCircle("circle-a-scaled",Math.min(an,common),common); drawCircle("circle-b-scaled",Math.min(bn,common),common);
+  drawStrip("strip-a",na,da); drawStrip("strip-b",nb,db); drawStrip("strip-a-scaled",an,common); drawStrip("strip-b-scaled",bn,common);
+  $("strip-label-a").textContent=fractionText(na,da); $("strip-label-b").textContent=fractionText(nb,db); $("strip-label-a-scaled").textContent=`${fractionText(na,da)} = ${an}/${common}`; $("strip-label-b-scaled").textContent=`${fractionText(nb,db)} = ${bn}/${common}`;
   $("lcm-note").textContent=`${window.mathStudyLanguage === "de" ? "kgV" : "LCM"}(${da}, ${db}) = ${common}`;
   $("equation").textContent=`${an}/${common} + ${bn}/${common} = ${fractionText(total,common)}`;
   $("calculation-explainer").textContent=window.mathStudyLanguage === "de" ? `Erweitere A mit ${ma} und B mit ${mb}. Addiere ${an} + ${bn} und behalte den gemeinsamen Nenner ${common}. Kürze das Ergebnis, wenn möglich.` : `Multiply A by ${ma} and B by ${mb}. Add the numerators ${an} + ${bn} and keep the common denominator ${common}. Simplify the result if possible.`;
@@ -92,4 +96,4 @@ function newQuestion(){
 }
 $("next-question").addEventListener("click",()=>{questionNumber++;newQuestion();});
 newQuestion();
-showTopic(location.pathname.endsWith("adding-fractions.html") ? "fractions" : "ordering");
+showTopic(location.pathname.endsWith("adding-fractions.html") ? "fractions" : location.pathname.endsWith("solids-and-nets.html") ? "solids" : location.pathname.endsWith("negative-numbers.html") ? "negative" : "ordering");
