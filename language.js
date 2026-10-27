@@ -99,7 +99,8 @@ const de = {
   "foldCube": "▶ Animieren: Netz zum Würfel falten",
   "animateFractions": "▶ Animieren: Bruchteile vergleichen",
   "belowZero": "unter null",
-  "aboveZero": "über null"
+  "aboveZero": "über null",
+  "topicArea": "Umfang & Fläche", "topicCoordinates": "Koordinatensystem", "topicAngles": "Winkel & Geometrie", "topicData": "Daten & Mittelwerte", "topicProbability": "Wahrscheinlichkeitslabor"
 };
 const en = {
   "languageLabel": "Language",
@@ -201,7 +202,8 @@ const en = {
   "foldCube": "▶ Animate folding into a cube",
   "animateFractions": "▶ Animate how the pieces match",
   "belowZero": "below zero",
-  "aboveZero": "above zero"
+  "aboveZero": "above zero",
+  "topicArea": "Perimeter & area", "topicCoordinates": "Coordinate plane", "topicAngles": "Angles & geometry", "topicData": "Data & averages", "topicProbability": "Probability lab"
 };
 function apply(lang) {
  window.mathStudyLanguage=lang;
@@ -210,13 +212,16 @@ function apply(lang) {
  document.title=lang==="de"?"Math Study — Mathematik verstehen":"Math Study — Understand Maths";
  document.querySelectorAll("[data-i18n]").forEach(el=>{const k=el.dataset.i18n;if(dict[k])el.textContent=dict[k]});
  const sel=document.getElementById("language-select");if(sel)sel.value=lang;
- const topic=location.pathname.endsWith("/adding-fractions.html")?"fractions":location.pathname.endsWith("/solids-and-nets.html")?"solids":location.pathname.endsWith("/negative-numbers.html")?"negative":"ordering";
+ const topic=location.pathname.endsWith("/adding-fractions.html")?"fractions":location.pathname.endsWith("/solids-and-nets.html")?"solids":location.pathname.endsWith("/negative-numbers.html")?"negative":location.pathname.endsWith("/perimeter-and-area.html")?"area":location.pathname.endsWith("/coordinate-plane.html")?"coordinates":location.pathname.endsWith("/angles-and-geometry.html")?"angles":location.pathname.endsWith("/data-and-mean.html")?"data":location.pathname.endsWith("/probability-lab.html")?"probability":"ordering";
  const crumb=document.getElementById("breadcrumb-topic");
- const topicNames={fractions:lang==="de"?"Brüche addieren":"Fractions & addition",solids:lang==="de"?"Körper & Netze":"Solids & nets",negative:lang==="de"?"Negative Zahlen":"Negative numbers",ordering:lang==="de"?"Zahlen vergleichen":"Comparing numbers"};
+ const topicNames={fractions:lang==="de"?"Brüche addieren":"Fractions & addition",solids:lang==="de"?"Körper & Netze":"Solids & nets",negative:lang==="de"?"Negative Zahlen":"Negative numbers",ordering:lang==="de"?"Zahlen vergleichen":"Comparing numbers",area:lang==="de"?"Umfang & Fläche":"Perimeter & area",coordinates:lang==="de"?"Koordinatensystem":"Coordinate plane",angles:lang==="de"?"Winkel & Geometrie":"Angles & geometry",data:lang==="de"?"Daten & Mittelwerte":"Data & averages",probability:lang==="de"?"Wahrscheinlichkeitslabor":"Probability lab"};
  if(crumb)crumb.textContent=topicNames[topic];
  const title=document.getElementById("page-title"),intro=document.getElementById("page-intro");
+ const extraTitles={area:lang==="de"?["Umfang und Fläche<br><span>selbst entdecken.</span>","Verändere Länge und Breite und beobachte, wie sich Umfang und Fläche verändern."]:["Explore perimeter<br><span>and area.</span>","Change length and width to see how perimeter and area respond."],coordinates:lang==="de"?["Punkte finden.<br><span>Koordinaten lesen.</span>","Bewege einen Punkt und lies seine Koordinaten im Koordinatensystem ab."]:["Plot a point.<br><span>Read coordinates.</span>","Move a point and read its coordinates on the coordinate plane."],angles:lang==="de"?["Winkel verstehen.<br><span>Formen erkunden.</span>","Verändere einen Winkel und entdecke, wie Winkel Größen und Formen beschreiben."]:["Understand angles.<br><span>Explore shapes.</span>","Change an angle and explore how angles describe shapes."],data:lang==="de"?["Daten verändern.<br><span>Mittelwerte verstehen.</span>","Passe Zahlen an und beobachte, wie sich der Durchschnitt verändert."]:["Change the data.<br><span>Understand averages.</span>","Adjust values and watch how the mean changes. "],probability:lang==="de"?["Wahrscheinlichkeit<br><span>experimentell erleben.</span>","Verändere die Chancen und vergleiche Erwartung und Zufallsergebnis."]:["Explore probability<br><span>through experiments.</span>","Change the odds and compare expected results with random outcomes."]};
+ if(extraTitles[topic]){if(title)title.innerHTML=extraTitles[topic][0];if(intro)intro.textContent=extraTitles[topic][1];}
  if(title)title.innerHTML=topic==="fractions"?(lang==="de"?"Brüche verstehen<br><span>und addieren.</span>":"Make fractions make<br><span>sense.</span>"):topic==="solids"?(lang==="de"?"Körper verstehen.<br><span>Netze entdecken.</span>":"Explore solids.<br><span>See them unfold.</span>"):topic==="negative"?(lang==="de"?"Zahlen unter null.<br><span>Alles im Blick.</span>":"Numbers below zero.<br><span>Find your place.</span>"):(lang==="de"?"Zahlen verstehen.<br><span>Sicherer werden.</span>":"Understand numbers.<br><span>Build confidence.</span>");
  if(intro)intro.textContent=topic==="fractions"?(lang==="de"?"Verstehe gemeinsame Nenner und übe anschließend selbst das Addieren von Brüchen.":"See why common denominators work, then practise adding fractions yourself."):topic==="solids"?(lang==="de"?"Erkunde Würfelnetze, Flächen und verschiedene Ansichten eines Körpers.":"Explore cube nets, faces and different views of a solid."):topic==="negative"?(lang==="de"?"Nutze den Zahlenstrahl, um negative Zahlen zu verstehen und sicher zu vergleichen.":"Use the number line to understand and compare negative numbers."):(lang==="de"?"Kurze Erklärungen, klare Bilder und interaktive Übungen machen wichtige Mathe-Ideen verständlich.":"Short explanations, clear visuals and hands-on practice to make important maths ideas click.");
+ if(typeof window.renderExtraMathLessons==="function")window.renderExtraMathLessons();
  const footer=document.getElementById("footer-edition");if(footer)footer.textContent=lang==="de"?"Math Study · deutsche Ausgabe":"Math Study · English edition";
  const count=document.getElementById("practice-count");if(count)count.textContent=(lang==="de"?"Aufgabe ":"Question ")+(count.textContent.match(/\d+/)||["1"])[0];
  const lcm=document.getElementById("lcm-note");if(lcm)lcm.textContent=lcm.textContent.replace(/^LCM/,"kgV");
