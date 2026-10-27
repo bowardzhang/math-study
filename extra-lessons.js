@@ -40,7 +40,34 @@ function initCoordinates(){
 }
 function initAngles(){
  const slider=$("angle-slider"),svg=$("angle-svg");if(!slider||!svg)return;
- function update(){const deg=+slider.value,rad=deg*Math.PI/180,cx=70,cy=170,r=125,ex=cx+r,ey=cy-r*Math.sin(rad);$("angle-out").value=deg+"°";$("angle-class").textContent=deg===0?t("Zero angle","Nullwinkel"):deg<90?t("Acute angle","Spitzer Winkel"):deg===90?t("Right angle","Rechter Winkel"):deg<180?t("Obtuse angle","Stumpfer Winkel"):t("Straight angle","Gestreckter Winkel");const arcR=42,ax=cx+arcR,ay=cy;const bx=cx+arcR*Math.cos(rad),by=cy-arcR*Math.sin(rad);const path=deg===0?"":'M '+ax+' '+ay+' A '+arcR+' '+arcR+' 0 '+(deg>180?1:0)+' 0 '+bx+' '+by;svg.innerHTML='<line x1="'+cx+'" y1="'+cy+'" x2="300" y2="'+cy+'" stroke="#6657d9" stroke-width="4" stroke-linecap="round"/><line x1="'+cx+'" y1="'+cy+'" x2="'+ex+'" y2="'+ey+'" stroke="#32b7a2" stroke-width="4" stroke-linecap="round"/><path d="'+path+'" fill="none" stroke="#e4a34b" stroke-width="4"/><circle cx="'+cx+'" cy="'+cy+'" r="5" fill="#3f4560"/><text x="76" y="194">'+deg+'°</text>';}
+ function update(){
+  const deg=+slider.value,rad=deg*Math.PI/180;
+  const cx=150,cy=174,r=118;
+  const ex=cx+r*Math.cos(rad),ey=cy-r*Math.sin(rad);
+  $("angle-out").value=deg+"°";
+  $("angle-class").textContent=deg===0?t("Zero angle","Nullwinkel"):deg<90?t("Acute angle","Spitzer Winkel"):deg===90?t("Right angle","Rechter Winkel"):deg<180?t("Obtuse angle","Stumpfer Winkel"):t("Straight angle","Gestreckter Winkel");
+  const arcR=42;
+  const bx=cx+arcR*Math.cos(rad),by=cy-arcR*Math.sin(rad);
+  const path=deg===0?"":'M '+(cx+arcR)+' '+cy+' A '+arcR+' '+arcR+' 0 0 0 '+bx+' '+by;
+  const mid=rad/2,labelR=arcR+22;
+  const labelX=cx+labelR*Math.cos(mid),labelY=cy-labelR*Math.sin(mid);
+  let rightAngle="";
+  if(deg===90){
+   const q=18;
+   rightAngle='<path d="M '+(cx+q)+' '+cy+' L '+(cx+q)+' '+(cy-q)+' L '+cx+' '+(cy-q)+'" fill="none" stroke="#e4a34b" stroke-width="3"/>';
+  }
+  svg.innerHTML=
+   '<line x1="22" y1="'+cy+'" x2="298" y2="'+cy+'" stroke="#e5e7f0" stroke-width="1.5"/>'+
+   '<line x1="'+cx+'" y1="24" x2="'+cx+'" y2="204" stroke="#e5e7f0" stroke-width="1.5"/>'+
+   '<line x1="'+cx+'" y1="'+cy+'" x2="'+(cx+r)+'" y2="'+cy+'" stroke="#6657d9" stroke-width="4" stroke-linecap="round"/>'+
+   '<line x1="'+cx+'" y1="'+cy+'" x2="'+ex+'" y2="'+ey+'" stroke="#32b7a2" stroke-width="4" stroke-linecap="round"/>'+
+   '<path d="'+path+'" fill="none" stroke="#e4a34b" stroke-width="4"/>'+rightAngle+
+   '<circle cx="'+cx+'" cy="'+cy+'" r="5" fill="#3f4560"/>'+
+   '<text x="'+Math.min(286,Math.max(28,labelX))+'" y="'+Math.min(202,Math.max(18,labelY))+'" text-anchor="middle" style="font-weight:800;fill:#9a6b1d">'+deg+'°</text>'+
+   '<text x="292" y="'+(cy+17)+'" text-anchor="end">0°</text>'+
+   '<text x="'+cx+'" y="16" text-anchor="middle">90°</text>'+
+   '<text x="27" y="'+(cy+17)+'">180°</text>';
+ }
  slider.addEventListener("input",update);update();
 }
 function initData(){
