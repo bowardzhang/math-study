@@ -18,7 +18,9 @@
         <div class="nav-group">
           <div class="nav-heading" data-i18n="numbers">Numbers</div>
           <a class="topic-link" href="comparing-decimals.html" data-topic="ordering"><span class="topic-icon">↕</span><span data-i18n="topicOrdering">Comparing numbers</span><span class="nav-arrow">›</span></a>
-          <a class="topic-link" href="adding-fractions.html" data-topic="fractions"><span class="topic-icon">½</span><span data-i18n="topicFractions">Adding fractions</span><span class="nav-arrow">›</span></a>
+          <a class="topic-link" href="adding-fractions.html" data-topic="fractions"><span class="topic-icon">½</span><span data-i18n="topicFractions">Fractions & addition</span><span class="nav-arrow">›</span></a>
+          <a class="topic-link" href="solids-and-nets.html" data-topic="solids"><span class="topic-icon">⬡</span><span data-i18n="topicSolids">Solids & nets</span><span class="nav-arrow">›</span></a>
+          <a class="topic-link" href="negative-numbers.html" data-topic="negative"><span class="topic-icon">±</span><span data-i18n="topicNegative">Negative numbers</span><span class="nav-arrow">›</span></a>
         </div>
         <div class="nav-group coming-soon">
           <div class="nav-heading" data-i18n="moreTopics">More topics</div>
@@ -64,8 +66,49 @@
           <article class="visual-card"><div class="step-label" data-i18n="step1">STEP 1</div><h3 data-i18n="originalFractions">See the original fractions</h3><p data-i18n="originalFractionsText">Each circle is one whole, split into equal parts.</p><div class="circle-pair"><div class="circle-item"><div id="circle-a" class="fraction-circle" aria-label="Fraction A visual"></div><div id="label-a" class="circle-fraction">1/3</div><small data-i18n="fractionA">Fraction A</small></div><div class="circle-item"><div id="circle-b" class="fraction-circle"></div><div id="label-b" class="circle-fraction">1/4</div><small data-i18n="fractionB">Fraction B</small></div></div></article>
           <article class="visual-card"><div class="step-label" data-i18n="step2">STEP 2</div><h3 data-i18n="equalPieces">Make equal-sized pieces</h3><p data-i18n="equalPiecesText">Convert both fractions to the same denominator (the LCM).</p><div class="circle-pair"><div class="circle-item"><div id="circle-a-scaled" class="fraction-circle"></div><div id="label-a-scaled" class="circle-fraction">4/12</div><small data-i18n="equivalentA">A equivalent fraction</small></div><div class="circle-item"><div id="circle-b-scaled" class="fraction-circle"></div><div id="label-b-scaled" class="circle-fraction">3/12</div><small data-i18n="equivalentB">B equivalent fraction</small></div></div><div class="lcm-note" id="lcm-note">LCM(3, 4) = 12</div></article>
         </div>
+        <section class="strip-panel"><div class="step-label" data-i18n="fractionStripsLabel">SEE THE FRACTIONS AS STRIPS</div><h3 data-i18n="fractionStripsTitle">Same amount, different-sized pieces</h3><p data-i18n="fractionStripsText">Each bar represents one whole. Compare the shaded length before and after extending a fraction.</p><div class="strip-row"><strong data-i18n="stripOriginalA">Fraction A</strong><div id="strip-a" class="fraction-strip" aria-label="Fraction A strip"></div><span id="strip-label-a" class="strip-value">1/3</span></div><div class="strip-row"><strong data-i18n="stripOriginalB">Fraction B</strong><div id="strip-b" class="fraction-strip" aria-label="Fraction B strip"></div><span id="strip-label-b" class="strip-value">1/4</span></div><div class="strip-row"><strong data-i18n="stripEquivalentA">A extended</strong><div id="strip-a-scaled" class="fraction-strip" aria-label="Equivalent fraction A strip"></div><span id="strip-label-a-scaled" class="strip-value">4/12</span></div><div class="strip-row"><strong data-i18n="stripEquivalentB">B extended</strong><div id="strip-b-scaled" class="fraction-strip" aria-label="Equivalent fraction B strip"></div><span id="strip-label-b-scaled" class="strip-value">3/12</span></div></section>
         <div class="calculation-card"><div class="step-label" data-i18n="step3">STEP 3 · ADD THE NUMERATORS</div><div id="equation" class="equation">4/12 + 3/12 = 7/12</div><p id="calculation-explainer">Multiply A by 4 and B by 3. Keep the common denominator and add the numerators.</p><div class="result-row"><span data-i18n="yourSum">YOUR SUM</span><strong id="sum-result">7/12</strong></div></div>
         <section class="practice-card"><div class="practice-header"><div><div class="eyebrow" data-i18n="checkUnderstanding">CHECK YOUR UNDERSTANDING</div><h3 data-i18n="quickPractice">Quick practice</h3><p data-i18n="practicePrompt">Calculate the sum, then choose the correct answer.</p></div><div class="practice-count" id="practice-count">Question 1</div></div><div id="practice-question" class="practice-question">1/2 + 1/3 = ?</div><div id="answer-options" class="answer-options"></div><div id="practice-feedback" class="practice-feedback" role="status" aria-live="polite"></div><button id="next-question" class="primary-button" hidden data-i18n="nextQuestion">Next question →</button></section>
+      </section>
+
+      <section id="lesson-solids" class="lesson-panel" hidden>
+        <div class="lesson-heading"><div><div class="eyebrow" data-i18n="solidsEyebrow">GEOMETRY · EXPLORE IN 3D</div><h2 data-i18n="solidsTitle">Solids, nets and views</h2><p data-i18n="solidsSubtitle">A net is a flat pattern that can fold into a solid.</p></div><span class="lesson-badge" data-i18n="gradeFourSeven">Grades 4–7</span></div>
+        <div class="lesson-copy"><h3 data-i18n="netIdeaTitle">From flat to solid</h3><p data-i18n="netIdeaText">A cube has 6 square faces, 12 edges and 8 vertices. Its net shows all six faces laid flat. Different nets can fold into the same cube, but not every arrangement of six squares works.</p></div>
+        <div class="solid-workbench">
+          <div class="solid-view-card"><div class="step-label" data-i18n="cubeNetLabel">THE NET</div><h3 data-i18n="tapAFace">Tap a face</h3><p data-i18n="tapAFaceText">Select a square to highlight the matching face on the cube.</p>
+            <div class="cube-net" id="cube-net" aria-label="Interactive cube net">
+              <button class="net-face face-top" data-face="top" aria-label="Top face">Top</button>
+              <button class="net-face face-left" data-face="left" aria-label="Left face">Left</button>
+              <button class="net-face face-front selected" data-face="front" aria-label="Front face">Front</button>
+              <button class="net-face face-right" data-face="right" aria-label="Right face">Right</button>
+              <button class="net-face face-back" data-face="back" aria-label="Back face">Back</button>
+              <button class="net-face face-bottom" data-face="bottom" aria-label="Bottom face">Bottom</button>
+            </div>
+            <div class="solid-tip" id="net-feedback" role="status" aria-live="polite">Front face selected.</div>
+          </div>
+          <div class="solid-view-card"><div class="step-label" data-i18n="solidViewLabel">THE SOLID</div><h3 data-i18n="cubeLabel">A cube</h3><p data-i18n="cubeText">All faces are equal squares. Edges meet at right angles.</p>
+            <svg class="cube-diagram" viewBox="0 0 300 240" role="img" aria-label="A cube with top, front and side faces">
+              <polygon class="cube-face cube-top" points="70,75 145,32 230,75 153,119"/>
+              <polygon class="cube-face cube-left" points="70,75 153,119 153,210 70,165"/>
+              <polygon class="cube-face cube-right" points="153,119 230,75 230,165 153,210"/>
+              <path d="M70 75 L145 32 L230 75 L230 165 L153 210 L70 165 Z M153 119 L145 32 M153 119 L70 75 M153 119 L230 75 M153 119 L153 210" fill="none" stroke="#4d526e" stroke-width="2.5" stroke-linejoin="round"/>
+              <text x="147" y="22" class="cube-label" text-anchor="middle">Top</text><text x="94" y="145" class="cube-label">Front</text><text x="192" y="148" class="cube-label">Side</text>
+            </svg>
+            <div class="solid-facts"><span><strong>6</strong><small data-i18n="faces">faces</small></span><span><strong>12</strong><small data-i18n="edges">edges</small></span><span><strong>8</strong><small data-i18n="vertices">vertices</small></span></div>
+          </div>
+        </div>
+        <div class="lesson-copy view-copy"><h3 data-i18n="viewsTitle">A solid can look different from each side</h3><p data-i18n="viewsText">A front view, a side view and a top view are 2D drawings of the same 3D object. The view changes, but the object stays the same.</p><div class="view-selector" role="group" aria-label="Choose a view"><button class="view-button active" data-view="front" data-i18n="frontView">Front view</button><button class="view-button" data-view="side" data-i18n="sideView">Side view</button><button class="view-button" data-view="top" data-i18n="topView">Top view</button></div><div id="view-demo" class="view-demo" aria-live="polite"><div class="view-shape front-shape"></div><p id="view-caption">Front view: a square.</p></div></div>
+        <section class="practice-card"><div class="practice-header"><div><div class="eyebrow" data-i18n="checkUnderstanding">CHECK YOUR UNDERSTANDING</div><h3 data-i18n="solidsPracticeTitle">Quick practice</h3><p data-i18n="solidsPracticePrompt">How many faces does a cube have?</p></div></div><div id="solids-options" class="answer-options"><button class="answer-option" data-correct="false">4</button><button class="answer-option" data-correct="true">6</button><button class="answer-option" data-correct="false">8</button><button class="answer-option" data-correct="false">12</button></div><div id="solids-feedback" class="practice-feedback" role="status" aria-live="polite"></div><button id="solids-next" class="primary-button" data-i18n="solidsNext" hidden>Another question →</button></section>
+      </section>
+      <section id="lesson-negative" class="lesson-panel" hidden>
+        <div class="lesson-heading"><div><div class="eyebrow" data-i18n="negativeEyebrow">NUMBERS · BELOW ZERO</div><h2 data-i18n="negativeTitle">Meet negative numbers</h2><p data-i18n="negativeSubtitle">Use a number line to see what positive and negative values mean.</p></div><span class="lesson-badge" data-i18n="gradeFiveSeven">Grades 5–7</span></div>
+        <div class="lesson-copy"><h3 data-i18n="negativeIdeaTitle">Zero is the starting point</h3><p data-i18n="negativeIdeaText">Positive numbers are to the right of zero. Negative numbers are to the left. The farther right a number lies, the greater it is. For example, −2 is greater than −5 because −2 is closer to zero.</p></div>
+        <div class="numberline-card"><div class="numberline-header"><div><h3 data-i18n="movePointTitle">Move the point</h3><p data-i18n="movePointText">Drag the slider to place the point on the number line.</p></div><strong id="numberline-value" class="numberline-value">−3</strong></div>
+          <div class="numberline" id="numberline" role="img" aria-label="Number line from minus ten to ten"><div class="numberline-axis"></div><div class="numberline-ticks" id="numberline-ticks"></div><div class="numberline-point" id="numberline-point"></div></div>
+          <label class="slider-label" for="number-slider"><span data-i18n="leftIsSmaller">← Smaller</span><span data-i18n="rightIsLarger">Larger →</span></label><input id="number-slider" type="range" min="-10" max="10" step="1" value="-3" class="number-slider"/>
+          <div class="temperature-example"><span class="temperature-icon">❄</span><div><strong data-i18n="temperatureTitle">Think about temperature</strong><p data-i18n="temperatureText">−4°C is colder than 2°C. Temperatures below zero are negative numbers.</p></div></div>
+        </div>
+        <section class="practice-card"><div class="practice-header"><div><div class="eyebrow" data-i18n="checkUnderstanding">CHECK YOUR UNDERSTANDING</div><h3 data-i18n="negativePracticeTitle">Which number is greater?</h3><p data-i18n="negativePracticePrompt">Compare the two numbers and choose the greater one.</p></div><div id="negative-count" class="practice-count">Question 1</div></div><div id="negative-question" class="practice-question">−2 or −5?</div><div id="negative-options" class="answer-options"></div><div id="negative-feedback" class="practice-feedback" role="status" aria-live="polite"></div><button id="negative-next" class="primary-button" data-i18n="nextQuestion" hidden>Next question →</button></section>
       </section>
       <footer class="page-footer"><div class="footer-message"><span class="dedication">❤️ For Linya and Luca ❤️</span></div><span id="footer-edition">Math Study · English edition</span></footer>
     </main>
@@ -73,5 +116,6 @@
   <script src="app.js"></script>
   <script src="language.js"></script>
   <script src="ordering.js"></script>
+  <script src="new-lessons.js"></script>
 </body>
 </html>
