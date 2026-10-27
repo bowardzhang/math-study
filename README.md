@@ -12,10 +12,15 @@ https://bowardzhang.github.io/math-study/
 
 - **Comparing numbers** — a native, randomly generated ordering activity using fractions, decimal litres, and millilitres. It follows this site’s UI and does not embed the original game.
   - Static URL: https://bowardzhang.github.io/math-study/comparing-decimals.html
-- **Adding fractions with different denominators** — interactive circle diagrams show each fraction, the equivalent fractions after scaling to the least common multiple (LCM), and the resulting sum. Includes a quick multiple-choice practice activity.
+- **Fractions and addition** — interactive circle diagrams and fraction strips show equivalent fractions, common denominators and the resulting sum. Includes randomized multiple-choice practice.
   - Static URL: https://bowardzhang.github.io/math-study/adding-fractions.html
 
-The selected language is saved in the browser when local storage is available. Reloading the page generates a fresh number-ordering question.
+- **Solids, nets and views** — an interactive cube net links selected faces to a 3D drawing, with front, side and top views and practice.
+  - Static URL: https://bowardzhang.github.io/math-study/solids-and-nets.html
+- **Negative numbers** — a movable point on a number line, temperature context and randomized comparison practice.
+  - Static URL: https://bowardzhang.github.io/math-study/negative-numbers.html
+
+The selected language is saved in the browser when local storage is available. Reloading the page generates fresh practice questions.
 
 More topics can be added over time.
 
