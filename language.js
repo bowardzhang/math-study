@@ -1,4 +1,3 @@
-(() => {
 const de = {
 "languageLabel":"Sprache",
 "learningPath":"LERNPFAD","numbers":"Zahlen","moreTopics":"Weitere Themen","topicOrdering":"Zahlen vergleichen","topicFractions":"Brüche addieren","topicMultiply":"Multiplikation & Division","topicPercentages":"Prozentrechnung","topicGeometry":"Geometrie","topicEquations":"Gleichungen","comingNote":"Weitere Lektionen folgen nach und nach.","sidebarFooter":"Für neugierige Lernende","maths":"Mathematik","audience":"GRUND- & WEITERFÜHRENDE SCHULE",
@@ -6,7 +5,53 @@ const de = {
 "orderInstructionTitle":"Bringe die Zahlen in die richtige Reihenfolge","orderInstructionText":"Tippe die Werte vom kleinsten zum größten an. Tippe einen ausgewählten Wert erneut an, um ihn zu entfernen.","yourOrder":"Deine Reihenfolge","smallestToLargest":"Kleinster → größter","checkAnswer":"Antwort prüfen","newQuestion":"↻ Neue Aufgabe","orderingTip":"Tipp: 1 Liter = 1.000 Milliliter. Vergleiche die Werte, nicht ihre Schreibweise.",
 "fractionsTitle":"Brüche mit unterschiedlichen Nennern addieren","fractionsSubtitle":"Mache die Teile gleich groß, bevor du sie addierst.","keyIdea":"Die Grundidee","keyIdeaText":"Der Nenner gibt an, in wie viele gleich große Teile ein Ganzes geteilt wird. Finde das kleinste gemeinsame Vielfache (kgV) und erweitere beide Brüche auf denselben Nenner.",
 "tryAnother":"↻ Andere Brüche","fractionInputError":"Verwende ganze Zahlen, Zähler von 1 bis Nenner − 1 und Nenner von 2 bis 10.","step1":"SCHRITT 1","originalFractions":"Die ursprünglichen Brüche","originalFractionsText":"Jeder Kreis stellt ein Ganzes dar und ist in gleich große Teile geteilt.","step2":"SCHRITT 2","equalPieces":"Gleich große Teile bilden","equalPiecesText":"Erweitere beide Brüche auf denselben Nenner (das kgV).","fractionA":"Bruch A","fractionB":"Bruch B","equivalentA":"Erweiterter Bruch A","equivalentB":"Erweiterter Bruch B","step3":"SCHRITT 3 · ZÄHLER ADDIEREN","yourSum":"DEINE SUMME",
-"checkUnderstanding":"PRÜFE DEIN VERSTÄNDNIS","quickPractice":"Kurze Übung","practicePrompt":"Berechne die Summe und wähle dann die richtige Antwort.","nextQuestion":"Nächste Aufgabe →","footerMessage":"Kleine Schritte schaffen ein starkes Fundament."
+"checkUnderstanding":"PRÜFE DEIN VERSTÄNDNIS","quickPractice":"Kurze Übung","practicePrompt":"Berechne die Summe und wähle dann die richtige Antwort.","nextQuestion":"Nächste Aufgabe →","footerMessage":"Kleine Schritte schaffen ein starkes Fundament.",
+"topicSolids":"Körper & Netze",
+"topicNegative":"Negative Zahlen",
+"fractionStripsLabel":"BRÜCHE ALS STREIFEN",
+"fractionStripsTitle":"Gleicher Anteil, unterschiedlich große Teile",
+"fractionStripsText":"Jeder Balken steht für ein Ganzes. Vergleiche die gefärbte Länge vor und nach dem Erweitern.",
+"stripOriginalA":"Bruch A",
+"stripOriginalB":"Bruch B",
+"stripEquivalentA":"A erweitert",
+"stripEquivalentB":"B erweitert",
+"solidsEyebrow":"GEOMETRIE · IN 3D ENTDECKEN",
+"solidsTitle":"Körper, Netze und Ansichten",
+"solidsSubtitle":"Ein Netz ist ein flaches Muster, das sich zu einem Körper falten lässt.",
+"gradeFourSeven":"Klassen 4–7",
+"netIdeaTitle":"Von der Fläche zum Körper",
+"netIdeaText":"Ein Würfel hat 6 quadratische Flächen, 12 Kanten und 8 Ecken. Sein Netz zeigt alle sechs Flächen ausgebreitet. Verschiedene Netze können zum selben Würfel gefaltet werden, aber nicht jede Anordnung aus sechs Quadraten funktioniert.",
+"cubeNetLabel":"DAS NETZ",
+"tapAFace":"Wähle eine Fläche",
+"tapAFaceText":"Wähle ein Quadrat, um die entsprechende Würfelfläche hervorzuheben.",
+"solidViewLabel":"DER KÖRPER",
+"cubeLabel":"Ein Würfel",
+"cubeText":"Alle Flächen sind gleich große Quadrate. Die Kanten treffen im rechten Winkel aufeinander.",
+"faces":"Flächen",
+"edges":"Kanten",
+"vertices":"Ecken",
+"viewsTitle":"Ein Körper sieht von jeder Seite anders aus",
+"viewsText":"Vorderansicht, Seitenansicht und Draufsicht sind zweidimensionale Zeichnungen desselben dreidimensionalen Körpers. Die Ansicht ändert sich, der Körper bleibt gleich.",
+"frontView":"Vorderansicht",
+"sideView":"Seitenansicht",
+"topView":"Draufsicht",
+"solidsPracticeTitle":"Kurze Übung",
+"solidsPracticePrompt":"Wie viele Flächen hat ein Würfel?",
+"solidsNext":"Weitere Aufgabe →",
+"negativeEyebrow":"ZAHLEN · UNTER NULL",
+"negativeTitle":"Lerne negative Zahlen kennen",
+"negativeSubtitle":"Entdecke mit dem Zahlenstrahl, was positive und negative Zahlen bedeuten.",
+"gradeFiveSeven":"Klassen 5–7",
+"negativeIdeaTitle":"Die Null ist der Ausgangspunkt",
+"negativeIdeaText":"Positive Zahlen liegen rechts von der Null, negative Zahlen links davon. Je weiter rechts eine Zahl liegt, desto größer ist sie. Zum Beispiel ist −2 größer als −5, weil −2 näher an der Null liegt.",
+"movePointTitle":"Bewege den Punkt",
+"movePointText":"Bewege den Regler, um den Punkt auf dem Zahlenstrahl zu platzieren.",
+"leftIsSmaller":"← Kleiner",
+"rightIsLarger":"Größer →",
+"temperatureTitle":"Denk an die Temperatur",
+"temperatureText":"−4 °C ist kälter als 2 °C. Temperaturen unter null sind negative Zahlen.",
+"negativePracticeTitle":"Welche Zahl ist größer?",
+"negativePracticePrompt":"Vergleiche beide Zahlen und wähle die größere Zahl."
 };
 const en = {
 "languageLabel":"Language",
@@ -15,7 +60,53 @@ const en = {
 "orderInstructionTitle":"Build the correct order","orderInstructionText":"Tap the values from smallest to largest. Tap a selected value again to remove it.","yourOrder":"Your order","smallestToLargest":"Smallest → largest","checkAnswer":"Check answer","newQuestion":"↻ New question","orderingTip":"Tip: 1 litre = 1,000 millilitres. Compare the values, not how they look.",
 "fractionsTitle":"Adding fractions with different denominators","fractionsSubtitle":"Make the pieces the same size before you add them.","keyIdea":"The key idea","keyIdeaText":"The denominator tells you how many equal pieces make one whole. Find the least common multiple (LCM), then make equivalent fractions with the same denominator.",
 "tryAnother":"↻ Try another","fractionInputError":"Use whole numbers, numerators from 1 to denominator − 1, and denominators from 2 to 10.","step1":"STEP 1","originalFractions":"See the original fractions","originalFractionsText":"Each circle is one whole, split into equal parts.","step2":"STEP 2","equalPieces":"Make equal-sized pieces","equalPiecesText":"Convert both fractions to the same denominator (the LCM).","fractionA":"Fraction A","fractionB":"Fraction B","equivalentA":"A equivalent fraction","equivalentB":"B equivalent fraction","step3":"STEP 3 · ADD THE NUMERATORS","yourSum":"YOUR SUM",
-"checkUnderstanding":"CHECK YOUR UNDERSTANDING","quickPractice":"Quick practice","practicePrompt":"Calculate the sum, then choose the correct answer.","nextQuestion":"Next question →","footerMessage":"Small steps make strong foundations."
+"checkUnderstanding":"CHECK YOUR UNDERSTANDING","quickPractice":"Quick practice","practicePrompt":"Calculate the sum, then choose the correct answer.","nextQuestion":"Next question →","footerMessage":"Small steps make strong foundations.",
+"topicSolids":"Solids & nets",
+"topicNegative":"Negative numbers",
+"fractionStripsLabel":"SEE THE FRACTIONS AS STRIPS",
+"fractionStripsTitle":"Same amount, different-sized pieces",
+"fractionStripsText":"Each bar represents one whole. Compare the shaded length before and after extending a fraction.",
+"stripOriginalA":"Fraction A",
+"stripOriginalB":"Fraction B",
+"stripEquivalentA":"A extended",
+"stripEquivalentB":"B extended",
+"solidsEyebrow":"GEOMETRY · EXPLORE IN 3D",
+"solidsTitle":"Solids, nets and views",
+"solidsSubtitle":"A net is a flat pattern that can fold into a solid.",
+"gradeFourSeven":"Grades 4–7",
+"netIdeaTitle":"From flat to solid",
+"netIdeaText":"A cube has 6 square faces, 12 edges and 8 vertices. Its net shows all six faces laid flat. Different nets can fold into the same cube, but not every arrangement of six squares works.",
+"cubeNetLabel":"THE NET",
+"tapAFace":"Tap a face",
+"tapAFaceText":"Select a square to highlight the matching face on the cube.",
+"solidViewLabel":"THE SOLID",
+"cubeLabel":"A cube",
+"cubeText":"All faces are equal squares. Edges meet at right angles.",
+"faces":"faces",
+"edges":"edges",
+"vertices":"vertices",
+"viewsTitle":"A solid can look different from each side",
+"viewsText":"A front view, a side view and a top view are 2D drawings of the same 3D object. The view changes, but the object stays the same.",
+"frontView":"Front view",
+"sideView":"Side view",
+"topView":"Top view",
+"solidsPracticeTitle":"Quick practice",
+"solidsPracticePrompt":"How many faces does a cube have?",
+"solidsNext":"Another question →",
+"negativeEyebrow":"NUMBERS · BELOW ZERO",
+"negativeTitle":"Meet negative numbers",
+"negativeSubtitle":"Use a number line to see what positive and negative values mean.",
+"gradeFiveSeven":"Grades 5–7",
+"negativeIdeaTitle":"Zero is the starting point",
+"negativeIdeaText":"Positive numbers are to the right of zero. Negative numbers are to the left. The farther right a number lies, the greater it is. For example, −2 is greater than −5 because −2 is closer to zero.",
+"movePointTitle":"Move the point",
+"movePointText":"Drag the slider to place the point on the number line.",
+"leftIsSmaller":"← Smaller",
+"rightIsLarger":"Larger →",
+"temperatureTitle":"Think about temperature",
+"temperatureText":"−4°C is colder than 2°C. Temperatures below zero are negative numbers.",
+"negativePracticeTitle":"Which number is greater?",
+"negativePracticePrompt":"Compare the two numbers and choose the greater one."
 };
 function apply(lang) {
  window.mathStudyLanguage=lang;
@@ -24,16 +115,18 @@ function apply(lang) {
  document.title=lang==="de"?"Math Study — Mathematik verstehen":"Math Study — Understand Maths";
  document.querySelectorAll("[data-i18n]").forEach(el=>{const k=el.dataset.i18n;if(dict[k])el.textContent=dict[k]});
  const sel=document.getElementById("language-select");if(sel)sel.value=lang;
- const topic=location.pathname.endsWith("/adding-fractions.html")?"fractions":"ordering";
+ const topic=location.pathname.endsWith("/adding-fractions.html")?"fractions":location.pathname.endsWith("/solids-and-nets.html")?"solids":location.pathname.endsWith("/negative-numbers.html")?"negative":"ordering";
  const crumb=document.getElementById("breadcrumb-topic");
- if(crumb)crumb.textContent=topic==="fractions"?(lang==="de"?"Brüche addieren":"Adding fractions"):(lang==="de"?"Zahlen vergleichen":"Comparing numbers");
+ const topicNames={fractions:lang==="de"?"Brüche addieren":"Fractions & addition",solids:lang==="de"?"Körper & Netze":"Solids & nets",negative:lang==="de"?"Negative Zahlen":"Negative numbers",ordering:lang==="de"?"Zahlen vergleichen":"Comparing numbers"};
+ if(crumb)crumb.textContent=topicNames[topic];
  const title=document.getElementById("page-title"),intro=document.getElementById("page-intro");
- if(title)title.innerHTML=topic==="fractions"?(lang==="de"?"Brüche verstehen<br><span>und addieren.</span>":"Make fractions make<br><span>sense.</span>"):(lang==="de"?"Zahlen verstehen.<br><span>Sicherer werden.</span>":"Understand numbers.<br><span>Build confidence.</span>");
- if(intro)intro.textContent=topic==="fractions"?(lang==="de"?"Verstehe gemeinsame Nenner und übe anschließend selbst das Addieren von Brüchen.":"See why common denominators work, then practise adding fractions yourself."):(lang==="de"?"Kurze Erklärungen, klare Bilder und interaktive Übungen machen wichtige Mathe-Ideen verständlich.":"Short explanations, clear visuals and hands-on practice to make important maths ideas click.");
+ if(title)title.innerHTML=topic==="fractions"?(lang==="de"?"Brüche verstehen<br><span>und addieren.</span>":"Make fractions make<br><span>sense.</span>"):topic==="solids"?(lang==="de"?"Körper verstehen.<br><span>Netze entdecken.</span>":"Explore solids.<br><span>See them unfold.</span>"):topic==="negative"?(lang==="de"?"Zahlen unter null.<br><span>Alles im Blick.</span>":"Numbers below zero.<br><span>Find your place.</span>"):(lang==="de"?"Zahlen verstehen.<br><span>Sicherer werden.</span>":"Understand numbers.<br><span>Build confidence.</span>");
+ if(intro)intro.textContent=topic==="fractions"?(lang==="de"?"Verstehe gemeinsame Nenner und übe anschließend selbst das Addieren von Brüchen.":"See why common denominators work, then practise adding fractions yourself."):topic==="solids"?(lang==="de"?"Erkunde Würfelnetze, Flächen und verschiedene Ansichten eines Körpers.":"Explore cube nets, faces and different views of a solid."):topic==="negative"?(lang==="de"?"Nutze den Zahlenstrahl, um negative Zahlen zu verstehen und sicher zu vergleichen.":"Use the number line to understand and compare negative numbers."):(lang==="de"?"Kurze Erklärungen, klare Bilder und interaktive Übungen machen wichtige Mathe-Ideen verständlich.":"Short explanations, clear visuals and hands-on practice to make important maths ideas click.");
  const footer=document.getElementById("footer-edition");if(footer)footer.textContent=lang==="de"?"Math Study · deutsche Ausgabe":"Math Study · English edition";
  const count=document.getElementById("practice-count");if(count)count.textContent=(lang==="de"?"Aufgabe ":"Question ")+(count.textContent.match(/\d+/)||["1"])[0];
  const lcm=document.getElementById("lcm-note");if(lcm)lcm.textContent=lcm.textContent.replace(/^LCM/,"kgV");
  if(typeof updateFractions==="function")updateFractions();
+ window.dispatchEvent(new CustomEvent("math-study-language-changed",{detail:{language:lang}}));
 }
 let lang="en";try{lang=localStorage.getItem("math-study-language")==="de"?"de":"en"}catch(e){}
 const sel=document.getElementById("language-select");
