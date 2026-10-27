@@ -95,7 +95,11 @@ const de = {
   "temperatureTitle": "Denk an die Temperatur",
   "temperatureText": "−4 °C ist kälter als 2 °C. Temperaturen unter null sind negative Zahlen.",
   "negativePracticeTitle": "Welche Zahl ist größer?",
-  "negativePracticePrompt": "Vergleiche beide Zahlen und wähle die größere Zahl."
+  "negativePracticePrompt": "Vergleiche beide Zahlen und wähle die größere Zahl.",
+  "foldCube": "▶ Animieren: Netz zum Würfel falten",
+  "animateFractions": "▶ Animieren: Bruchteile vergleichen",
+  "belowZero": "unter null",
+  "aboveZero": "über null"
 };
 const en = {
   "languageLabel": "Language",
@@ -193,7 +197,11 @@ const en = {
   "temperatureTitle": "Think about temperature",
   "temperatureText": "−4°C is colder than 2°C. Temperatures below zero are negative numbers.",
   "negativePracticeTitle": "Which number is greater?",
-  "negativePracticePrompt": "Compare the two numbers and choose the greater one."
+  "negativePracticePrompt": "Compare the two numbers and choose the greater one.",
+  "foldCube": "▶ Animate folding into a cube",
+  "animateFractions": "▶ Animate how the pieces match",
+  "belowZero": "below zero",
+  "aboveZero": "above zero"
 };
 function apply(lang) {
  window.mathStudyLanguage=lang;
