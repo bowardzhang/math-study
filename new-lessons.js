@@ -47,7 +47,7 @@ function initNegative(){
  const slider=$("number-slider");if(!slider)return;
  const ticks=$("numberline-ticks");
  for(let n=-10;n<=10;n++){const tick=document.createElement("div");tick.className="number-tick"+(n===0?" zero":"");tick.style.left=((n+10)/20*100)+"%";const label=document.createElement("span");label.textContent=n;tick.appendChild(label);ticks.appendChild(tick);}
- function update(){const n=Number(slider.value);$("numberline-value").textContent=n<0?"−"+Math.abs(n):String(n);$("numberline-point").style.left=((n+10)/20*100)+"%";$("numberline").setAttribute("aria-label",text("Number line, selected value ","Zahlenstrahl, ausgewählter Wert ")+n);}
+ function update(){const n=Number(slider.value),fmt=n<0?"−"+Math.abs(n):String(n);$("numberline-value").textContent=fmt;$("numberline-point").style.left=((n+10)/20*100)+"%";$("numberline").setAttribute("aria-label",text("Number line, selected value ","Zahlenstrahl, ausgewählter Wert ")+n);const explanation=n<0?text(fmt+" is negative because it lies to the left of zero.",fmt+" ist negativ, weil die Zahl links von null liegt."):n>0?text(fmt+" is positive because it lies to the right of zero.",fmt+" ist positiv, weil die Zahl rechts von null liegt."):text("Zero is neither positive nor negative.","Null ist weder positiv noch negativ.");$("numberline-explanation").textContent=explanation;}
  slider.addEventListener("input",update);update();
  let q=0,locked=false,answer=0;
  function next(){
