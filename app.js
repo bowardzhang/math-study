@@ -2,14 +2,15 @@ const $ = (id) => document.getElementById(id);
 const navButtons = [...document.querySelectorAll(".topic-link")];
 function showTopic(topic) {
   navButtons.forEach(button => button.classList.toggle("active", button.dataset.topic === topic));
-  const sections = {ordering:"lesson-ordering", fractions:"lesson-fractions", solids:"lesson-solids", negative:"lesson-negative"};
+  const sections = {ordering:"lesson-ordering", fractions:"lesson-fractions", solids:"lesson-solids", negative:"lesson-negative", area:"lesson-area", coordinates:"lesson-coordinates", angles:"lesson-angles", data:"lesson-data", probability:"lesson-probability"};
   Object.entries(sections).forEach(([key,id])=>{const el=$(id);if(el)el.hidden=key!==topic;});
-  const titles={ordering:"Comparing numbers",fractions:"Fractions & addition",solids:"Solids & nets",negative:"Negative numbers"};
-  $("breadcrumb-topic").textContent=titles[topic]||titles.ordering;
+  const titles={ordering:["Comparing numbers","Zahlen vergleichen"],fractions:["Fractions & addition","Brüche addieren"],solids:["Solids & nets","Körper & Netze"],negative:["Negative numbers","Negative Zahlen"],area:["Perimeter & area","Umfang & Fläche"],coordinates:["Coordinate plane","Koordinatensystem"],angles:["Angles & geometry","Winkel & Geometrie"],data:["Data & averages","Daten & Mittelwerte"],probability:["Probability lab","Wahrscheinlichkeitslabor"]};
+  $("breadcrumb-topic").textContent=(titles[topic]||titles.ordering)[window.mathStudyLanguage==="de"?1:0];
   $("welcome").style.background = topic === "fractions" ? "linear-gradient(115deg,#eff0ff 0%,#f7f4ff 57%,#e9f8f3 100%)" : topic === "solids" ? "linear-gradient(115deg,#e8f7f3 0%,#f6f8ff 60%,#fff0e9 100%)" : topic === "negative" ? "linear-gradient(115deg,#e8f1ff 0%,#f8f7ff 60%,#e9f8f3 100%)" : "";
   $("sidebar").classList.remove("open");
 }
 navButtons.forEach(button => button.addEventListener("click", () => showTopic(button.dataset.topic)));
+window.showMathStudyTopic = showTopic;
 $("menu-toggle").addEventListener("click", () => $("sidebar").classList.toggle("open"));
 
 const gcd = (a,b) => b ? gcd(b,a%b) : Math.abs(a);
@@ -96,4 +97,5 @@ function newQuestion(){
 }
 $("next-question").addEventListener("click",()=>{questionNumber++;newQuestion();});
 newQuestion();
-showTopic(location.pathname.endsWith("adding-fractions.html") ? "fractions" : location.pathname.endsWith("solids-and-nets.html") ? "solids" : location.pathname.endsWith("negative-numbers.html") ? "negative" : "ordering");
+const initialTopic = location.pathname.endsWith("adding-fractions.html") ? "fractions" : location.pathname.endsWith("solids-and-nets.html") ? "solids" : location.pathname.endsWith("negative-numbers.html") ? "negative" : location.pathname.endsWith("perimeter-and-area.html") ? "area" : location.pathname.endsWith("coordinate-plane.html") ? "coordinates" : location.pathname.endsWith("angles-and-geometry.html") ? "angles" : location.pathname.endsWith("data-and-mean.html") ? "data" : location.pathname.endsWith("probability-lab.html") ? "probability" : "ordering";
+showTopic(initialTopic);
