@@ -24,10 +24,11 @@
         </div>
         <div class="nav-group coming-soon">
           <div class="nav-heading" data-i18n="moreTopics">More topics</div>
-          <div class="topic-placeholder"><span class="topic-icon">×</span><span data-i18n="topicMultiply">Multiplication & division</span></div>
-          <div class="topic-placeholder"><span class="topic-icon">%</span><span data-i18n="topicPercentages">Percentages</span></div>
-          <div class="topic-placeholder"><span class="topic-icon">📐</span><span data-i18n="topicGeometry">Geometry</span></div>
-          <div class="topic-placeholder"><span class="topic-icon">x</span><span data-i18n="topicEquations">Equations</span></div>
+          <a class="topic-link" href="perimeter-and-area.html" data-topic="area"><span class="topic-icon">▦</span><span data-i18n="topicArea">Perimeter & area</span><span class="nav-arrow">›</span></a>
+          <a class="topic-link" href="coordinate-plane.html" data-topic="coordinates"><span class="topic-icon">↗</span><span data-i18n="topicCoordinates">Coordinate plane</span><span class="nav-arrow">›</span></a>
+          <a class="topic-link" href="angles-and-geometry.html" data-topic="angles"><span class="topic-icon">∠</span><span data-i18n="topicAngles">Angles & geometry</span><span class="nav-arrow">›</span></a>
+          <a class="topic-link" href="data-and-mean.html" data-topic="data"><span class="topic-icon">▥</span><span data-i18n="topicData">Data & averages</span><span class="nav-arrow">›</span></a>
+          <a class="topic-link" href="probability-lab.html" data-topic="probability"><span class="topic-icon">◉</span><span data-i18n="topicProbability">Probability lab</span><span class="nav-arrow">›</span></a>
           <p class="coming-note" data-i18n="comingNote">More lessons will be added over time.</p>
         </div>
       </nav>
@@ -112,6 +113,7 @@
 <div class="temperature-compare" aria-label="Animated comparison of minus four degrees and two degrees"><div class="temp-card below-zero"><span class="temp-thermometer">❄</span><strong>−4 °C</strong><small data-i18n="belowZero">below zero</small></div><div class="temp-bridge" aria-hidden="true"><span>←</span><i></i><span>→</span></div><div class="temp-card above-zero"><span class="temp-thermometer">☀</span><strong>+2 °C</strong><small data-i18n="aboveZero">above zero</small></div></div>
         <section class="practice-card"><div class="practice-header"><div><div class="eyebrow" data-i18n="checkUnderstanding">CHECK YOUR UNDERSTANDING</div><h3 data-i18n="negativePracticeTitle">Which number is greater?</h3><p data-i18n="negativePracticePrompt">Compare the two numbers and choose the greater one.</p></div><div id="negative-count" class="practice-count">Question 1</div></div><div id="negative-question" class="practice-question">−2 or −5?</div><div id="negative-options" class="answer-options"></div><div id="negative-feedback" class="practice-feedback" role="status" aria-live="polite"></div><button id="negative-next" class="primary-button" data-i18n="nextQuestion" hidden>Next question →</button></section>
       </section>
+      <div id="extra-lessons-root"></div>
       <footer class="page-footer"><div class="footer-message"><span class="dedication">❤️ For Linya and Luca ❤️</span></div><span id="footer-edition">Math Study · English edition</span></footer>
     </main>
   </div>
@@ -119,5 +121,6 @@
   <script src="language.js"></script>
   <script src="ordering.js"></script>
   <script src="new-lessons.js"></script>
+  <script src="extra-lessons.js"></script>
 </body>
 </html>
