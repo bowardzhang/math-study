@@ -31,3 +31,7 @@ More topics can be added over time.
 3. Pushes to `main` run the workflow in `.github/workflows/pages.yml`; it publishes the static files to GitHub Pages.
 
 No build step or package installation is needed.
+
+## Source and adaptation note
+
+The choice of candidate knowledge areas was informed by [xiaoyang111222/cn-math-taxonomy](https://github.com/xiaoyang111222/cn-math-taxonomy), whose repository is licensed under CC BY-NC 4.0. These lessons use newly written explanations, newly implemented interactions and original diagrams rather than copying that repository's question bank or SVG assets. This project is intended for non-commercial learning use; review the source repository's license before reusing any of its actual content.
