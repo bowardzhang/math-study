@@ -4,12 +4,15 @@ const lang = () => window.mathStudyLanguage === "de" ? "de" : "en";
 const text = (en,de) => lang()==="de"?de:en;
 function initSolids(){
  const net=$("cube-net"); if(!net)return;
- const faces={top:".cube-top",front:".cube-left",left:".cube-left",right:".cube-right",back:".cube-right",bottom:".cube-top"};
- const faceNames={top:["Top face selected.","Oberseite ausgewählt."],front:["Front face selected.","Vorderseite ausgewählt."],left:["Left face selected (schematic).","Linke Fläche ausgewählt (schematisch)."],right:["Right face selected.","Rechte Seite ausgewählt."],back:["Back face selected (schematic).","Rückseite ausgewählt (schematisch)."],bottom:["Bottom face selected (schematic).","Unterseite ausgewählt (schematisch)."]};
+ const faces={top:".cube-top",front:".cube-left",right:".cube-right"};
+ const faceLabels={top:["Top","Oben"],front:["Front","Vorne"],left:["Left","Links"],right:["Right","Rechts"],back:["Back","Hinten"],bottom:["Bottom","Unten"]};
+ const faceNames={top:["Top face selected.","Oberseite ausgewählt."],front:["Front face selected.","Vorderseite ausgewählt."],left:["The left face is hidden in this 3D view.","Die linke Fläche ist in dieser 3D-Ansicht verdeckt."],right:["Right face selected.","Rechte Seite ausgewählt."],back:["The back face is hidden in this 3D view.","Die Rückseite ist in dieser 3D-Ansicht verdeckt."],bottom:["The bottom face is hidden in this 3D view.","Die Unterseite ist in dieser 3D-Ansicht verdeckt."]};
  function selectFace(name){
   net.querySelectorAll(".net-face").forEach(b=>b.classList.toggle("selected",b.dataset.face===name));
   document.querySelectorAll(".cube-face").forEach(el=>el.classList.remove("highlight"));
-  const selector=faces[name];const el=document.querySelector(selector);if(el)el.classList.add("highlight");
+  const selector=faces[name];const el=selector?document.querySelector(selector):null;if(el)el.classList.add("highlight");
+  net.querySelectorAll(".net-face").forEach(b=>{b.textContent=faceLabels[b.dataset.face][lang()==="de"?1:0];});
+  const svgLabels=document.querySelectorAll(".cube-diagram .cube-label");if(svgLabels.length===3){svgLabels[0].textContent=text("Top","Oben");svgLabels[1].textContent=text("Front","Vorne");svgLabels[2].textContent=text("Side","Seite");}
   $("net-feedback").textContent=faceNames[name][lang()==="de"?1:0];
  }
  net.querySelectorAll(".net-face").forEach(b=>b.addEventListener("click",()=>selectFace(b.dataset.face)));
