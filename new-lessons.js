@@ -37,7 +37,7 @@ function initSolids(){
   host.dataset.locked="0";
  }
  $("solids-next").addEventListener("click",solidsQuestion);
- window.addEventListener("math-study-language-changed",()=>{selectFace(net.querySelector(".net-face.selected")?.dataset.face||"front");});
+ window.addEventListener("math-study-language-changed",()=>{selectFace(net.querySelector(".net-face.selected")?.dataset.face||"front");solidsQuestion();});
  selectFace("front");solidsQuestion();
 }
 function initNegative(){
@@ -56,7 +56,7 @@ function initNegative(){
   const host=$("negative-options");host.innerHTML="";
   [a,b].sort(()=>Math.random()-.5).forEach(n=>{const btn=document.createElement("button");btn.className="answer-option";btn.textContent=fmt(n);btn.addEventListener("click",()=>{if(locked)return;locked=true;[...host.children].forEach(x=>{x.disabled=true;if(x.textContent===fmt(answer))x.classList.add("correct")});const good=n===answer;$("negative-feedback").textContent=good?text("Correct! The number farther to the right is greater.","Richtig! Die weiter rechts liegende Zahl ist größer."):text("Not quite. ","Noch nicht ganz. ")+fmt(answer)+text(" is greater because it lies farther to the right."," ist größer, weil sie weiter rechts liegt.");$("negative-feedback").className="practice-feedback "+(good?"good":"bad");$("negative-next").hidden=false});host.appendChild(btn)});
  }
- $("negative-next").addEventListener("click",next);next();
+ $("negative-next").addEventListener("click",next);window.addEventListener("math-study-language-changed",next);next();
 }
 document.addEventListener("DOMContentLoaded",()=>{initSolids();initNegative();});
 })();
