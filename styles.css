@@ -92,3 +92,5 @@
 #decimal-line-svg{width:100%;height:auto;max-height:150px;overflow:visible}
 #decimal-convert-input{max-width:180px}
 @media(max-width:520px){.number-set-layers{padding:8px}.set-real,.set-rational,.set-integer{padding:8px}.set-relation{font-size:17px}}
+
+.fraction-converter{margin-top:18px;padding-top:14px;border-top:1px solid #e8e9f1}.fraction-converter h4{margin:0 0 10px;font-size:14px}.fraction-converter-fields{display:flex;align-items:end;gap:10px;flex-wrap:wrap}.fraction-converter-fields label{display:grid;gap:5px;font-size:12px;font-weight:700}.fraction-converter-fields input{width:100px;max-width:100%;padding:8px;border:1px solid #d9dbea;border-radius:8px;background:#fff;color:inherit;font:inherit}
