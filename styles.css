@@ -79,3 +79,16 @@
 .extra-feedback{min-height:22px;margin-top:12px;font-size:12px;font-weight:700;color:var(--purple)}
 @media(max-width:800px){.extra-grid{grid-template-columns:1fr}.extra-lesson{padding:16px}}
 @media(prefers-reduced-motion:reduce){.area-rectangle,.data-bar{transition:none}}
+
+/* Number sets and decimal exploration */
+.number-set-layers{max-width:620px;margin:16px auto 8px;padding:14px;border-radius:14px;background:#f3f1ff;color:#4b4389}
+.set-real,.set-rational,.set-integer,.set-natural{border:2px solid #8c80df;border-radius:12px;padding:12px}
+.set-real{background:#eeeaff}.set-rational{margin-top:10px;background:#e8f7f3;border-color:#6bb9aa;color:#285e56}
+.set-integer{margin-top:10px;background:#fff4df;border-color:#e4b967;color:#77551d}
+.set-natural{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:10px;padding:12px;background:#fff;border:2px solid #d8d2f7;border-radius:9px;color:#4b4389}
+.set-integer-examples,.set-rational-examples{margin:8px 0 0;font-size:13px;overflow-wrap:anywhere}
+.set-irrational{margin:10px 0 0;padding:10px;background:#fff;border-radius:8px;color:#4b4389}
+.set-relation{text-align:center;font-size:20px;font-weight:800;letter-spacing:1px}
+#decimal-line-svg{width:100%;height:auto;max-height:150px;overflow:visible}
+#decimal-convert-input{max-width:180px}
+@media(max-width:520px){.number-set-layers{padding:8px}.set-real,.set-rational,.set-integer{padding:8px}.set-relation{font-size:17px}}
